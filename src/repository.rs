@@ -1,5 +1,6 @@
 use failure::{bail, Error};
 use ini::Ini;
+use std::fs;
 use std::path::{Path, PathBuf};
 
 pub struct Repository {
@@ -9,7 +10,7 @@ pub struct Repository {
 }
 
 impl Repository {
-    fn new(path: &Path, force: bool) -> Result<Self, Error> {
+    pub fn new(path: &Path, force: bool) -> Result<Self, Error> {
         let worktree = path.to_path_buf();
         let gitdir = path.join(".git");
 
