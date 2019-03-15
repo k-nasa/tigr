@@ -22,8 +22,10 @@ impl Repository {
 
         let conf = if config_file.exists() {
             Ini::load_from_file(config_file).unwrap()
-        } else {
+        } else if !force {
             bail!("Configuration file missing")
+        } else {
+            Ini::new()
         };
 
         if !force {
