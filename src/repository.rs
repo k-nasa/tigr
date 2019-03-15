@@ -78,7 +78,7 @@ impl Repository {
         let path = self.gitdir.join(path);
 
         if path.exists() {
-            if !path.is_dir() {
+            if path.is_dir() {
                 return Ok(());
             }
             bail!("Not a directory {}", path.display())
