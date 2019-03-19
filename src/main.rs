@@ -1,4 +1,5 @@
 mod commands;
+mod git_object;
 mod repository;
 
 use commands::build_app;
