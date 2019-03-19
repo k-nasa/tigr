@@ -98,4 +98,8 @@ impl Repository {
 
         conf
     }
+
+    pub fn gitdir(&self) -> PathBuf {
+        self.gitdir.clone()
+    }
 }
