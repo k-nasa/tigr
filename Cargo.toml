@@ -9,5 +9,5 @@ rust-ini = "0.13"
 ruspec = "0.1.1"
 failure = "*"
 clap = "*"
-# flate2 = { version = "1.0", features = ["zlib"], default-features = false }
 flate2 = "1.0"
+sha1 = "0.6.0"
