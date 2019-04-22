@@ -1,16 +1,15 @@
 #[cfg(test)]
 mod test {
     use ruspec::ruspec;
+    use std::fs;
+    use std::path::Path;
+    use std::process::Command;
     const COMMAND: &str = "target/debug/tigr";
     const SANDBOX_PATH: &str = "sandbox";
 
     ruspec! {
         describe "init command" {
             before {
-                use std::fs;
-                use std::process::Command;
-                use std::path::Path;
-                use super::*;
 
                 Command::new(COMMAND)
                     .arg("init")
